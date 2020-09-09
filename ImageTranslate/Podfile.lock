@@ -1,0 +1,16 @@
+PODS:
+  - SwiftyTesseract (3.1.2)
+
+DEPENDENCIES:
+  - SwiftyTesseract
+
+SPEC REPOS:
+  trunk:
+    - SwiftyTesseract
+
+SPEC CHECKSUMS:
+  SwiftyTesseract: d898472f63355f8bf023cbab2c80ceda0805a40c
+
+PODFILE CHECKSUM: 41f4bcda13954d976aa7853255e45b1b9ed1ed5b
+
+COCOAPODS: 1.9.3

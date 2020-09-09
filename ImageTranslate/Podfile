@@ -1,0 +1,19 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'ImageTranslate' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for ImageTranslate
+pod 'SwiftyTesseract'
+  target 'ImageTranslateTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ImageTranslateUITests' do
+    # Pods for testing
+  end
+
+end
