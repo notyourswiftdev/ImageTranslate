@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1A6DA6342501C1DC00E8423E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DA6332501C1DC00E8423E /* AppDelegate.swift */; };
 		1A6DA6362501C1DC00E8423E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DA6352501C1DC00E8423E /* SceneDelegate.swift */; };
-		1A6DA6382501C1DC00E8423E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DA6372501C1DC00E8423E /* ViewController.swift */; };
+		1A6DA6382501C1DC00E8423E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DA6372501C1DC00E8423E /* CameraViewController.swift */; };
 		1A6DA63D2501C1DD00E8423E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A6DA63C2501C1DD00E8423E /* Assets.xcassets */; };
 		1A6DA6402501C1DD00E8423E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A6DA63E2501C1DD00E8423E /* LaunchScreen.storyboard */; };
 		1A6DA64B2501C1DD00E8423E /* ImageTranslateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DA64A2501C1DD00E8423E /* ImageTranslateTests.swift */; };
@@ -41,7 +41,7 @@
 		1A6DA6302501C1DC00E8423E /* ImageTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6DA6332501C1DC00E8423E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A6DA6352501C1DC00E8423E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1A6DA6372501C1DC00E8423E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1A6DA6372501C1DC00E8423E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		1A6DA63C2501C1DD00E8423E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A6DA63F2501C1DD00E8423E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A6DA6412501C1DD00E8423E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				5D8FA660250920DF003F1EEB /* Resources */,
-				1A6DA6372501C1DC00E8423E /* ViewController.swift */,
+				1A6DA6372501C1DC00E8423E /* CameraViewController.swift */,
 				1A6DA63E2501C1DD00E8423E /* LaunchScreen.storyboard */,
 			);
 			path = ImageTranslate;
@@ -170,7 +170,6 @@
 				BC8E298DC60BDADBA3D4E4AC /* Pods-ImageTranslateTests.debug.xcconfig */,
 				EAC0021163ECEBC5E96A17B7 /* Pods-ImageTranslateTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -412,7 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A6DA6382501C1DC00E8423E /* ViewController.swift in Sources */,
+				1A6DA6382501C1DC00E8423E /* CameraViewController.swift in Sources */,
 				1A6DA6342501C1DC00E8423E /* AppDelegate.swift in Sources */,
 				1A6DA6362501C1DC00E8423E /* SceneDelegate.swift in Sources */,
 			);
