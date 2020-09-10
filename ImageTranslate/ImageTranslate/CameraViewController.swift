@@ -30,14 +30,12 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
     private let photoOutput = AVCapturePhotoOutput()
     
-    
     // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         openCamera()
         self.navigationController?.isNavigationBarHidden = true
     }
-    
     
     // MARK: - Private Methods
     private func setupUI() {

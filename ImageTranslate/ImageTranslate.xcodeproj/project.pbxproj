@@ -10,6 +10,8 @@
 		1A00264C2509C84F00F0F0B5 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00264B2509C84F00F0F0B5 /* SavedViewController.swift */; };
 		1A00264E2509CE6B00F0F0B5 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00264D2509CE6B00F0F0B5 /* MainTabViewController.swift */; };
 		1A0026512509CF1300F0F0B5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0026502509CF1300F0F0B5 /* SettingsViewController.swift */; };
+		1A0026552509DBC500F0F0B5 /* ImageTranslate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A0026532509DBC500F0F0B5 /* ImageTranslate.xcdatamodeld */; };
+		1A0026572509DBD100F0F0B5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0026562509DBD100F0F0B5 /* CoreDataStack.swift */; };
 		1A6DA6342501C1DC00E8423E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DA6332501C1DC00E8423E /* AppDelegate.swift */; };
 		1A6DA6362501C1DC00E8423E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DA6352501C1DC00E8423E /* SceneDelegate.swift */; };
 		1A6DA6382501C1DC00E8423E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DA6372501C1DC00E8423E /* CameraViewController.swift */; };
@@ -46,6 +48,8 @@
 		1A00264B2509C84F00F0F0B5 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		1A00264D2509CE6B00F0F0B5 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		1A0026502509CF1300F0F0B5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1A0026542509DBC500F0F0B5 /* ImageTranslate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageTranslate.xcdatamodel; sourceTree = "<group>"; };
+		1A0026562509DBD100F0F0B5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1A6DA6302501C1DC00E8423E /* ImageTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6DA6332501C1DC00E8423E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A6DA6352501C1DC00E8423E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		1A0026522509DBAD00F0F0B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1A0026532509DBC500F0F0B5 /* ImageTranslate.xcdatamodeld */,
+				1A0026562509DBD100F0F0B5 /* CoreDataStack.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1A6DA6272501C1DC00E8423E = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +155,7 @@
 		1A6DA6322501C1DC00E8423E /* ImageTranslate */ = {
 			isa = PBXGroup;
 			children = (
+				1A0026522509DBAD00F0F0B5 /* Model */,
 				1A00264F2509CEAC00F0F0B5 /* Utilities */,
 				5D8FA660250920DF003F1EEB /* Resources */,
 				1A6DA6372501C1DC00E8423E /* CameraViewController.swift */,
@@ -439,8 +453,10 @@
 				1A00264C2509C84F00F0F0B5 /* SavedViewController.swift in Sources */,
 				1ABE460A2509956100FD7345 /* UIView+Extensions.swift in Sources */,
 				1A6DA6342501C1DC00E8423E /* AppDelegate.swift in Sources */,
+				1A0026572509DBD100F0F0B5 /* CoreDataStack.swift in Sources */,
 				1A00264E2509CE6B00F0F0B5 /* MainTabViewController.swift in Sources */,
 				1A6DA6362501C1DC00E8423E /* SceneDelegate.swift in Sources */,
+				1A0026552509DBC500F0F0B5 /* ImageTranslate.xcdatamodeld in Sources */,
 				1A0026512509CF1300F0F0B5 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -770,6 +786,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1A0026532509DBC500F0F0B5 /* ImageTranslate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1A0026542509DBC500F0F0B5 /* ImageTranslate.xcdatamodel */,
+			);
+			currentVersion = 1A0026542509DBC500F0F0B5 /* ImageTranslate.xcdatamodel */;
+			path = ImageTranslate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1A6DA6282501C1DC00E8423E /* Project object */;
 }
