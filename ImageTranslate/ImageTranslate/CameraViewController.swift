@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Photos
+import SwiftyTesseract
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
