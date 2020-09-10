@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A00264C2509C84F00F0F0B5 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00264B2509C84F00F0F0B5 /* SavedViewController.swift */; };
+		1A00264E2509CE6B00F0F0B5 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00264D2509CE6B00F0F0B5 /* MainTabViewController.swift */; };
+		1A0026512509CF1300F0F0B5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0026502509CF1300F0F0B5 /* SettingsViewController.swift */; };
 		1A6DA6342501C1DC00E8423E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DA6332501C1DC00E8423E /* AppDelegate.swift */; };
 		1A6DA6362501C1DC00E8423E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DA6352501C1DC00E8423E /* SceneDelegate.swift */; };
 		1A6DA6382501C1DC00E8423E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6DA6372501C1DC00E8423E /* CameraViewController.swift */; };
@@ -40,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		012E264C6747BDF00FE13D04 /* Pods-ImageTranslateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageTranslateTests.debug.xcconfig"; path = "Target Support Files/Pods-ImageTranslateTests/Pods-ImageTranslateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1A00264B2509C84F00F0F0B5 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		1A00264D2509CE6B00F0F0B5 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		1A0026502509CF1300F0F0B5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1A6DA6302501C1DC00E8423E /* ImageTranslate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageTranslate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A6DA6332501C1DC00E8423E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A6DA6352501C1DC00E8423E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +109,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1A00264F2509CEAC00F0F0B5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1ABE46092509956100FD7345 /* UIView+Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		1A6DA6272501C1DC00E8423E = {
 			isa = PBXGroup;
 			children = (
@@ -128,11 +142,13 @@
 		1A6DA6322501C1DC00E8423E /* ImageTranslate */ = {
 			isa = PBXGroup;
 			children = (
+				1A00264F2509CEAC00F0F0B5 /* Utilities */,
 				5D8FA660250920DF003F1EEB /* Resources */,
 				1A6DA6372501C1DC00E8423E /* CameraViewController.swift */,
-				1A6DA63E2501C1DD00E8423E /* LaunchScreen.storyboard */,
 				1AEC09002509916000338E34 /* PhotoPreviewView.swift */,
-				1ABE46092509956100FD7345 /* UIView+Extensions.swift */,
+				1A00264B2509C84F00F0F0B5 /* SavedViewController.swift */,
+				1A00264D2509CE6B00F0F0B5 /* MainTabViewController.swift */,
+				1A0026502509CF1300F0F0B5 /* SettingsViewController.swift */,
 			);
 			path = ImageTranslate;
 			sourceTree = "<group>";
@@ -158,6 +174,7 @@
 		5D8FA660250920DF003F1EEB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1A6DA63E2501C1DD00E8423E /* LaunchScreen.storyboard */,
 				1A6DA6332501C1DC00E8423E /* AppDelegate.swift */,
 				1A6DA6352501C1DC00E8423E /* SceneDelegate.swift */,
 				1A6DA63C2501C1DD00E8423E /* Assets.xcassets */,
@@ -419,9 +436,12 @@
 			files = (
 				1AEC09012509916000338E34 /* PhotoPreviewView.swift in Sources */,
 				1A6DA6382501C1DC00E8423E /* CameraViewController.swift in Sources */,
+				1A00264C2509C84F00F0F0B5 /* SavedViewController.swift in Sources */,
 				1ABE460A2509956100FD7345 /* UIView+Extensions.swift in Sources */,
 				1A6DA6342501C1DC00E8423E /* AppDelegate.swift in Sources */,
+				1A00264E2509CE6B00F0F0B5 /* MainTabViewController.swift in Sources */,
 				1A6DA6362501C1DC00E8423E /* SceneDelegate.swift in Sources */,
+				1A0026512509CF1300F0F0B5 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

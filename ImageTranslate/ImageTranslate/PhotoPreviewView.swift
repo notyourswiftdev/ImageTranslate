@@ -18,14 +18,57 @@ class PhotoPreviewView: UIView {
         return imageView
     }()
     
+    lazy private var cancelButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "xmark"), for: .normal)
+        button.addTarget(self, action: #selector(handleCancel), for: .touchUpInside)
+        button.tintColor = .white
+        return button
+    }()
+    
+    lazy private var savePhotoButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "square.and.arrow.down"), for: .normal)
+        button.addTarget(self, action: #selector(handleSavePhoto), for: .touchUpInside)
+        button.tintColor = .white
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(photoImageView)
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    // MARK: - Private Methods
+    
+    private func setupUI() {
+        addSubview(photoImageView)
+        photoImageView.anchor(top: topAnchor,
+                              left: leftAnchor,
+                              bottom: bottomAnchor,
+                              right: rightAnchor)
+        
+        addSubview(cancelButton)
+        cancelButton.anchor(top: safeAreaLayoutGuide.topAnchor,
+                            right: rightAnchor,
+                            paddingTop: 15,
+                            paddingRight: 10,
+                            width: 50,
+                            height: 50)
+        
+        addSubview(savePhotoButton)
+        savePhotoButton.anchor(right: cancelButton.leftAnchor,
+                               paddingRight: 5,
+                               width: 50,
+                               height: 50)
+        savePhotoButton.centerYAnchor.constraint(equalTo: cancelButton.centerYAnchor).isActive = true
+    }
+    
+    // MARK: - Object Helpers
     
     @objc func handleCancel() {
         DispatchQueue.main.async {

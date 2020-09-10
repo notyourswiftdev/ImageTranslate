@@ -12,28 +12,32 @@ import Photos
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
-    // MARK: - Properties
-    private let photoOutput = AVCapturePhotoOutput()
+    // MARK: - Variables
+    lazy private var backButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "xmark"), for: .normal)
+        button.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
+        button.tintColor = .white
+        return button
+    }()
     
     lazy private var takePhotoButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("CAPTURE", for: .normal)
-        button.setTitleColor(.label, for: .normal)
-//        button.setImage(UIImage(systemName: "person")?.withTintColor(.white), for: .normal)
+        button.setImage(UIImage(named: "capture_photo")?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(handleTakePhoto), for: .touchUpInside)
         return button
     }()
-
-    // MARK: - Lifecycle
+    
+    private let photoOutput = AVCapturePhotoOutput()
+    
+    
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        requestPermissionAndShowCamera()
+        openCamera()
+        self.navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-    }
     
     // MARK: - Private Methods
     private func setupUI() {
@@ -42,39 +46,52 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                                paddingBottom: 15,
                                width: 80,
                                height: 80)
-        takePhotoButton.centerX(inView: view)
+        takePhotoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        view.addSubview(backButton)
+        backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor,
+                          right: view.rightAnchor,
+                          paddingTop: 15,
+                          paddingRight: 10,
+                          width: 50,
+                          height: 50)
     }
     
-    private func requestPermissionAndShowCamera() {
+    private func openCamera() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
-        case .authorized: // User has already authorized to access the camera.
+        case .authorized: // the user has already authorized to access the camera.
             self.setupCaptureSession()
-        case .notDetermined: // user has not yet been asked for camera access
+            
+        case .notDetermined: // the user has not yet asked for camera access.
             AVCaptureDevice.requestAccess(for: .video) { (granted) in
-                if granted { // user has granted access to the camera
-                    print("User has grated access to the camera")
+                if granted { // if user has granted to access the camera.
+                    print("the user has granted to access the camera")
                     DispatchQueue.main.async {
                         self.setupCaptureSession()
                     }
                 } else {
-                    print("User has not granted to access the camera")
+                    print("the user has not granted to access the camera")
                     self.handleDismiss()
                 }
             }
+            
         case .denied:
-            print("User has denied previously to access the camera")
+            print("the user has denied previously to access the camera.")
             self.handleDismiss()
+            
         case .restricted:
-            print("User can't give camera access due to some restrictions")
+            print("the user can't give camera access due to some restriction.")
             self.handleDismiss()
+            
         default:
-            print("Something has gone wrong due to we can't access the camera.")
+            print("something has wrong due to we can't access the camera.")
             self.handleDismiss()
         }
     }
     
     private func setupCaptureSession() {
         let captureSession = AVCaptureSession()
+        
         if let captureDevice = AVCaptureDevice.default(for: AVMediaType.video) {
             do {
                 let input = try AVCaptureDeviceInput(device: captureDevice)
@@ -93,18 +110,19 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             cameraLayer.frame = self.view.frame
             cameraLayer.videoGravity = .resizeAspectFill
             self.view.layer.addSublayer(cameraLayer)
+            
             captureSession.startRunning()
             self.setupUI()
         }
     }
     
-    @objc func handleDismiss() {
+    @objc private func handleDismiss() {
         DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
         }
     }
     
-    @objc func handleTakePhoto() {
+    @objc private func handleTakePhoto() {
         let photoSettings = AVCapturePhotoSettings()
         if let photoPreviewType = photoSettings.availablePreviewPhotoPixelFormatTypes.first {
             photoSettings.previewPhotoFormat = [kCVPixelBufferPixelFormatTypeKey as String: photoPreviewType]
@@ -112,7 +130,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         }
     }
     
-    internal func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         guard let imageData = photo.fileDataRepresentation() else { return }
         let previewImage = UIImage(data: imageData)
         
@@ -121,4 +139,3 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         self.view.addSubview(photoPreviewContainer)
     }
 }
-
