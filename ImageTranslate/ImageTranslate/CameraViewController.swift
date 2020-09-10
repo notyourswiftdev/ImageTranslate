@@ -13,6 +13,9 @@ import SwiftyTesseract
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     
+    // MARK: - Properties
+    let tesseract = SwiftyTesseract(languages: [.english, .french])
+    
     // MARK: - Variables
     lazy private var backButton: UIButton = {
         let button = UIButton(type: .system)
